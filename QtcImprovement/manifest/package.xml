@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <fullName>LoadSynthesis_V3</fullName>
+
+    <types>
+
+        <members>LoadSynthesisController</members>
+        <members>LoadSynthesisControllerTest</members>
+        <members>LoadSynthesisOutcallController</members>
+        <members>LoadSynthesisOutcallService</members>
+
+        <name>ApexClass</name>
+
+    </types>
+
+    <types>
+
+        <members>LoadSynthesis__c.Annual_MWh__c</members>
+        <members>LoadSynthesis__c.Channel__c</members>
+        <members>LoadSynthesis__c.Error_Message__c</members>
+        <members>LoadSynthesis__c.Esiids__c</members>
+        <members>LoadSynthesis__c.Estimation_Type__c</members>
+        <members>LoadSynthesis__c.IDR_Flag__c</members>
+        <members>LoadSynthesis__c.Industry_Type__c</members>
+        <members>LoadSynthesis__c.Monthly_Usage__c</members>
+        <members>LoadSynthesis__c.No_of_Employee_for_Bus__c</members>
+        <members>LoadSynthesis__c.RequestedByUser_FederationID__c</members>
+        <members>LoadSynthesis__c.Sq_Foot_of_Premise__c</members>
+        <members>LoadSynthesis__c.Status__c</members>
+        <members>LoadSynthesis__c.Years_in_Business__c</members>
+        <members>LoadSynthesis__c.ZipCode__c</members>
+
+        <name>CustomField</name>
+
+    </types>
+
+    <types>
+
+        <members>AMWhorMonthlyUsageRequired</members>
+        <members>BoomiFailure_GenericErrorMessage</members>
+        <members>ChannelRequired</members>
+        <members>ESIIDsRequired</members>
+        <members>EstimatedAMWhRequired</members>
+        <members>EstimationTypeRequired</members>
+        <members>IndustryTypeRequired</members>
+        <members>KWhNumber</members>
+        <members>MeterReadEndDateAndrespectiveKWh</members>
+        <members>ZipCodeNumber</members>
+        <members>ZipCodeRequired</members>
+
+        <name>CustomLabel</name>
+
+    </types>
+
+    <types>
+
+     <members>LoadSynthesis__c.Download_Usage</members>
+
+     <name>QuickAction</name>
+
+    </types>
+
+    <types>
+
+        <members>LoadSynthesis__c</members>
+        <name>CustomObject</name>
+
+    </types>
+
+    <types> 
+<members>LoadSynthesis__c.All</members> 
+<name>ListView</name> 
+</types>
+
+     <types>
+
+        <members>LoadSynthesis_Tool</members>
+        <members>LoadSynthesis__c</members>
+
+        <name>CustomTab</name>
+
+    </types>
+
+    <types>
+
+        <members>unfiled$public/Load_Synthesis_Complete</members>
+        <members>unfiled$public/Load_Synthesis_Error</members>
+
+        <name>EmailTemplate</name>
+
+    </types>
+
+
+    <types>
+
+        <members>LoadSynthesis__c-LoadSynthesis Layout</members>
+
+        <name>Layout</name>
+
+    </types>
+
+    <types>
+
+        <members>loadSynthesis</members>
+
+        <name>LightningComponentBundle</name>
+
+    </types>
+
+    <types>
+
+        <members>LoadSynthesis</members>
+
+        <name>PermissionSet</name>
+
+    </types>
+
+    <types>
+
+        <members>LoadSynthesis__c.Load_Synthesis_Complete</members>
+        <members>LoadSynthesis__c.Load_Synthesis_Error</members>
+
+        <name>WorkflowAlert</name>
+
+    </types>
+
+    <types>
+
+        <members>LoadSynthesis__c.LoadSynthesisComplete</members>
+        <members>LoadSynthesis__c.LoadSynthesisError</members>
+
+        <name>WorkflowRule</name>
+
+    </types>
+
+ 
+
+   <types>
+
+        <members>Download_Usage_for_LoadSynth</members>
+
+     <name>Flow</name>
+
+    </types>
+
+ 
+
+     <types>
+
+        <members>LoadSynthUsageDownload</members>
+
+        <name>ExternalServiceRegistration</name>
+
+    </types>
+
+   
+
+ 
+
+    <version>53.0</version>
+
+</Package>

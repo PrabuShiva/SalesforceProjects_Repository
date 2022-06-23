@@ -1,0 +1,17 @@
+Load Synthesis Error for {!LoadSynthesis__c.Name}:<br><br>
+
+<table>
+<tr><td>Status                 </td><td>:-</td><td> {!LoadSynthesis__c.Status__c}</td></tr>
+<tr><td>Error Message          </td><td>:-</td><td> {!LoadSynthesis__c.Error_Message__c}</td></tr>
+<tr><td>Estimation Type        </td><td>:-</td><td> {!LoadSynthesis__c.Estimation_Type__c}</td></tr>
+<tr><td>Channel                </td><td>:-</td><td> {!LoadSynthesis__c.Channel__c}</td></tr>
+<tr><td>Industry Type          </td><td>:-</td><td> {!LoadSynthesis__c.Industry_Type__c}</td></tr>
+<tr><td>ZipCode                </td><td>:-</td><td> {!LoadSynthesis__c.ZipCode__c}</td></tr>
+<tr><td>Sq Foot of Premise     </td><td>:-</td><td> {!LoadSynthesis__c.Sq_Foot_of_Premise__c}</td></tr>
+<tr><td>Years in Business      </td><td>:-</td><td> {!LoadSynthesis__c.Years_in_Business__c}</td></tr>
+<tr><td>No of Employee for Bus </td><td>:-</td><td> {!LoadSynthesis__c.No_of_Employee_for_Bus__c}</td></tr>
+<tr><td>ESIID                  </td><td>:-</td><td> {!LoadSynthesis__c.Esiids__c}</td></tr>
+</table>
+<br>
+
+Thanks

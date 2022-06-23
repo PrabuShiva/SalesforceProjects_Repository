@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AMWhorMonthlyUsageRequired</fullName>
+        <categories>LoadSynthesis</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AMWhorMonthlyUsageRequired</shortDescription>
+        <value>Please Enter Estimated AMWh (or) Monthly Usage</value>
+    </labels>
+    <labels>
+        <fullName>BoomiFailure_GenericErrorMessage</fullName>
+        <categories>LoadSynthesis</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BoomiFailure GenericErrorMessage</shortDescription>
+        <value>Unable to process the request, Please contact System Admin</value>
+    </labels>
+    <labels>
+        <fullName>ChannelRequired</fullName>
+        <categories>LoadSynthesis</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ChannelRequired</shortDescription>
+        <value>Please Enter Channel</value>
+    </labels>
+    <labels>
+        <fullName>ESIIDsRequired</fullName>
+        <categories>LoadSynthesis</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ESIIDsRequired</shortDescription>
+        <value>Please Enter ESIIDs</value>
+    </labels>
+    <labels>
+        <fullName>EstimatedAMWhRequired</fullName>
+        <categories>LoadSynthesis</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EstimatedAMWhRequired</shortDescription>
+        <value>Estimated AMWh should be a Number</value>
+    </labels>
+    <labels>
+        <fullName>EstimationTypeRequired</fullName>
+        <categories>LoadSynthesis</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EstimationTypeRequired</shortDescription>
+        <value>Please Enter Estimation Type</value>
+    </labels>
+    <labels>
+        <fullName>IndustryTypeRequired</fullName>
+        <categories>LoadSynthesis</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IndustryTypeRequired</shortDescription>
+        <value>Please Enter Industry Type</value>
+    </labels>
+    <labels>
+        <fullName>KWhNumber</fullName>
+        <categories>LoadSynthesis</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KWhNumber</shortDescription>
+        <value>KWh should be a Number</value>
+    </labels>
+    <labels>
+        <fullName>MeterReadEndDateAndrespectiveKWh</fullName>
+        <categories>LoadSynthesis</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MeterReadEndDateAndrespectiveKWh</shortDescription>
+        <value>Both Meter Read End Date &amp; respective KWh should be entered</value>
+    </labels>
+    <labels>
+        <fullName>ZipCodeNumber</fullName>
+        <categories>LoadSynthesis</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ZipCodeNumber</shortDescription>
+        <value>Zip Code should be a 5 digit Number</value>
+    </labels>
+    <labels>
+        <fullName>ZipCodeRequired</fullName>
+        <categories>LoadSynthesis</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ZipCodeRequired</shortDescription>
+        <value>Please Enter Zip Code</value>
+    </labels>
+</CustomLabels>

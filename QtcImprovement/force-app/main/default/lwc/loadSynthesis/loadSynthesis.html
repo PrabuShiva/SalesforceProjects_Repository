@@ -1,0 +1,297 @@
+<!--*************************************************************************************************************
+=================================================================================================================
+Copyright � 2020 TXU Energy Retail LLC
+================================================================================
+Purpose: To Upload Essids from user
+
+Referenced By:SubFlow_ESIID_Usage_Information,lWCESIIDUsageInfoParent
+================================================================================
+History 
+------- 
+VERSION AUTHOR DATE DETAIL PPM/IM/PM
+------ -------------- ------------ ---------------------------------------- ----------------
+
+=================================================================================================================
+**************************************************************************************************************-->
+<template>
+    <!-- Upload esiids through input text area-->
+
+<lightning-spinner if:true={isProcessing} alternative-text="Processing" size="small"></lightning-spinner>   
+
+<lightning-tabset  variant="Scoped" class=".slds-tabs--default__item.slds-active">
+    <lightning-tab label="Submit to LoadSynthesis">
+<c-lwcdisplay-Error error-message-list={errorMessage}></c-lwcdisplay-Error>
+
+<template if:true={_Page1}>
+
+<div title="LoadSynthesis">
+     <div class="slds-text-heading_medium" style="background-color:#009B8C;color:#FFFFFF">Customer Info for Estimation
+   </div>
+   <table title="LoadSynthesis" class="slds-table slds-table_bordered slds-table_cell-buffer">
+       <tbody>
+
+        <tr>
+            <td>Estimation Type </td>
+         <td>
+          <template if:true={EstimationType_Field_PicklistValues.data}>
+              <lightning-combobox name="EstimationType"  placeholder='Select an Estimation Type' required="true"
+                  options={EstimationType_Field_PicklistValues.data.values}
+                  onchange={handleChange_EstimationType}> 
+              </lightning-combobox>
+          </template>
+
+          
+         </td>
+         <td>IDR Flag </td>
+         <td>
+             <lightning-input type="checkbox" name="IDRFlag" 
+                  data-id={IDRFlag} 
+                 onchange={handleChange_IDRFlag}></lightning-input>
+
+         </td>
+      </tr>
+
+
+
+
+        <tr>
+              <td>Channel </td>
+           <td>
+            <template if:true={_TosaOrCustom}>
+            <template if:true={Channel_Field_PicklistValues.data}>
+                <lightning-combobox name="Channel"  placeholder='Select Channel' required
+                    options={Channel_Field_PicklistValues.data.values}
+                    onchange={handleChange_Channel} > 
+                </lightning-combobox>
+            </template>
+           </template>   
+
+           <template if:true={_isLighting}>
+            <template if:true={Channel_Field_PicklistValues.data}>
+                <lightning-combobox name="Channel"  placeholder='LIGHTING'
+                    options={Channel_Field_PicklistValues.data.values}
+                    onchange={handleChange_Channel} disabled> 
+                </lightning-combobox>
+            </template>
+           </template>   
+
+            
+           </td>
+           
+            
+           
+           
+
+         <td>Estimated AMWh </td>
+           <td>
+            <lightning-input type="text" name="AnnualMWh"   onchange={handleChange_AnnualMWh} pattern="[0-9]*" message-when-pattern-mismatch="Only numbers allowed for AMWh">
+                </lightning-input>
+           </td>
+           
+        </tr>
+
+
+           <tr>
+            <td>Industry Type </td>
+            <td>
+             <template if:true={_TosaOrCustom}>   
+             <template if:true={IndustryType_Field_PicklistValues.data}>
+                 <lightning-combobox name="IndustryType"  placeholder='Select an Industry Type' required="true"
+                     options={IndustryType_Field_PicklistValues.data.values}
+                     onchange={handleChange_IndustryType}>
+                 </lightning-combobox>
+             </template>
+             </template>
+
+             <template if:true={_isLighting}>
+             <template if:true={IndustryType_Field_PicklistValues.data}>
+                 <lightning-combobox name="Channel"  placeholder='LIGHTING'
+                     options={IndustryType_Field_PicklistValues.data.values}
+                     onchange={handleChange_IndustryType} disabled> 
+                 </lightning-combobox>
+             </template>
+            </template>   
+            </td>
+
+               <td>Sq Foot of Premise </td>
+               <td>
+                <template if:true={Sq_Foot_Field_PicklistValues.data}>
+                <lightning-combobox name="SqFootofPremise" placeholder='none'
+                    options={Sq_Foot_Field_PicklistValues.data.values}
+                    onchange={handleChange_SqFootofPremise}>
+                </lightning-combobox>
+            </template>
+            </td>
+           </tr>
+
+           <tr>
+             <td>Zip Code </td>
+             <td>
+                <lightning-input type="text" name="ZipCode"  onchange={handleChange_ZipCode} required="true" pattern="^[0-9]{5}(?:-[0-9]{4})?$" message-when-pattern-mismatch="Please enter a valid zip code with 5 digits">
+                </lightning-input>
+            </td>
+
+             <td># of Emply for Bus</td>
+             <td>
+                <template if:true={No_of_Employee_Field_PicklistValues.data}>
+                    <lightning-combobox name="#ofEmplyforBus"  placeholder='none'
+                        options={No_of_Employee_Field_PicklistValues.data.values}
+                        onchange={handleChange_EmplyforBus}>
+                    </lightning-combobox>
+                </template>
+            </td>
+         </tr>
+
+         <tr>
+         
+           <td>ESIIDs</td>
+         <td>
+            <lightning-textarea name="ESIIDs" label="For multiple ESIID's use new line"   placeholder="Enter ESIIDs here..." required="true" onchange={handleChange_essids} >
+            </lightning-textarea>
+         </td>
+
+           <td>Years in Business</td>
+           <td>
+            <template if:true={Years_Field_PicklistValues.data}>
+                <lightning-combobox name="YearsinBusiness"  placeholder='none'
+                    options={Years_Field_PicklistValues.data.values}
+                    onchange={handleChange_YearInBus}>
+                </lightning-combobox>
+            </template>
+        </td>
+       </tr>
+
+       </tbody>
+   </table>
+   <div class="slds-text-heading_medium" style="background-color:#009B8C;color:#FFFFFF">Monthly Usage
+   </div>
+
+</div>
+
+
+
+
+
+
+
+<!--For Usage-->
+
+
+        <template for:each={itemList} for:item="item" for:index="index">
+            <lightning-record-edit-form key={item.id} object-api-name="Contact" >
+                <lightning-messages> </lightning-messages>
+                <lightning-layout multiple-rows style="background-color:#FFFFFF">
+
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2"
+                        padding="around-small">
+                        <lightning-input type='Date' label="Meter Read End Date" name="MeterReadEndDate" variant="label-stacked">
+                        </lightning-input>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2"
+                        padding="around-small">
+                        <lightning-input type='text' label="KWh" name="KWh" variant="label-stacked">
+                        </lightning-input>
+                    </lightning-layout-item>
+                  
+                    
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2"
+                        padding="around-small">
+                        <div class="slds-p-top_medium">
+                            <lightning-icon icon-name="action:new" access-key={item.id} id={index}
+                                alternative-text="Add Row" size="small" title="Add Row" onclick={addRow}>
+                            </lightning-icon> &nbsp;&nbsp;&nbsp;
+                            <lightning-icon icon-name="action:delete" access-key={item.id} id={index}
+                                alternative-text="Delete Row" size="small" title="Delete Row" onclick={removeRow}>
+                            </lightning-icon>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+            </lightning-record-edit-form>
+        </template>
+        </br>
+
+
+        <button label="Submit" onclick={handleSubmit} class="slds-button slds-button_brand">Submit</button>
+<!--For Usage-->
+    </template>
+
+
+
+
+
+
+    <template if:true={_Page2}>
+        
+            <div class="slds-text-heading_medium" style="background-color:#009B8C;color:#FFFFFF">Confirmation</div>
+            
+          <table title="LoadSynthesis" class="slds-table slds-table_bordered slds-table_cell-buffer">
+              <tbody>
+       
+               <tr>
+                   <td><b></br></br></br>Please click finish to submit your request to LoadSynthesis</b><div> </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></div></td>     <td></td>
+                </tr>
+               
+       
+                 </tbody>
+          </table>
+        
+        </br>
+          <button label="Finish" onclick={handleFinish} class="slds-button slds-button_brand">Finish</button> 
+    </template>
+
+    <template if:true={_Page3}>        
+    
+    </template>
+
+</lightning-tab>
+<!--*****************************************tab 2     Download Usage Part - Start*********************************************************-->
+
+<lightning-tab label="Download Usage">
+
+    <c-lwcdisplay-Error error-message-list={errorMessageforDownloadUsage}></c-lwcdisplay-Error>
+    <template if:true={_Page1_DownloadUsage}>
+
+        <div title="LoadSynthesis">
+             <div class="slds-text-heading_medium" style="background-color:#009B8C;color:#FFFFFF">Download Usage for ESIIDs
+           </div>
+          ESIIDs :     
+                    <lightning-textarea name="ESIIDsforDownloadUsage" label="For multiple ESIID's use new line"   placeholder="Enter ESIIDs here..." required="true" onchange={handleChange_essidsforDownloadUsage} >
+                    </lightning-textarea>
+                
+        
+        </div>
+        
+                <button label="Download Usage" onclick={handleSubmitforDownloadUsage} class="slds-button slds-button_brand">Download Usage</button>
+            </template>
+
+            <template if:true={_Page2_DownloadUsage}>
+        
+                <div class="slds-text-heading_medium" style="background-color:#009B8C;color:#FFFFFF">Confirmation</div>
+                
+              <table title="LoadSynthesis" class="slds-table slds-table_bordered slds-table_cell-buffer">
+                  <tbody>
+           
+                   <tr>
+                       <td><b></br></br></br>Please click finish to submit your request to Download Usage</b><div> </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></div></td>     <td></td>
+                    </tr>
+                   
+           
+                     </tbody>
+              </table>
+            
+            </br>
+              <button label="Finish" onclick={handleFinishForDownloadUsage} class="slds-button slds-button_brand">Finish</button> 
+        </template>
+    
+        <template if:true={_Page3_DownloadUsage}>        
+        
+        </template>
+
+</lightning-tab>
+<!--*****************************************tab 2     Download Usage Part - End*********************************************************-->
+
+</lightning-tabset>
+
+</template>

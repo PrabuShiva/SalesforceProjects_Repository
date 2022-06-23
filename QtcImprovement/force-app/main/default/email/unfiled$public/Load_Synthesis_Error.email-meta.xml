@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Load Synthesis Error</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Load Synthesis Error</name>
+    <style>none</style>
+    <subject>Load Synthesis Error for {!LoadSynthesis__c.Name}</subject>
+    <textOnly>Load Synthesis Error for {!LoadSynthesis__c.Name}:
+
+Status  :-  {!LoadSynthesis__c.Status__c}
+Error Message  :-  {!LoadSynthesis__c.Error_Message__c}
+Estimation Type  :-  {!LoadSynthesis__c.Estimation_Type__c}
+Channel  :-  {!LoadSynthesis__c.Channel__c}
+Industry Type  :-  {!LoadSynthesis__c.Industry_Type__c}
+ZipCode  :-  {!LoadSynthesis__c.ZipCode__c}
+Sq Foot of Premise  :-  {!LoadSynthesis__c.Sq_Foot_of_Premise__c}
+Years in Business  :-  {!LoadSynthesis__c.Years_in_Business__c}
+No of Employee for Bus  :-  {!LoadSynthesis__c.No_of_Employee_for_Bus__c}
+ESIID  :-  {!LoadSynthesis__c.Esiids__c}
+
+
+Thanks</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

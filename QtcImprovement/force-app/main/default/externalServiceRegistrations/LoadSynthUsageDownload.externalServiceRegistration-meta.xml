@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalServiceRegistration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>LoadSynthUsageDownload</label>
+    <namedCredential>Boomi</namedCredential>
+    <operations>
+        <active>true</active>
+        <name>postusagefromhana</name>
+    </operations>
+    <registrationProviderType>Custom</registrationProviderType>
+    <schema>{
+	&quot;swagger&quot;: &quot;2.0&quot;,
+	&quot;info&quot;: {
+		&quot;version&quot;: &quot;1&quot;,
+		&quot;title&quot;: &quot;LoadSynthUsage&quot;
+	},
+	&quot;host&quot;: &quot;services-dv.txmkt.txu.com&quot;,
+	&quot;basePath&quot;: &quot;/sf/lbm/txu/rest/loadSynthUsageDownload&quot;,
+	&quot;schemes&quot;: [
+		&quot;https&quot;
+	],
+	&quot;paths&quot;: {
+		&quot;/UsageFromHana&quot;: {
+			&quot;post&quot;: {
+				&quot;tags&quot;: [&quot;UsageFromHana&quot;],
+				&quot;summary&quot;: &quot;WEBSVC LoadSynthesis Write Usage from HANA to SF Request Main&quot;,
+				&quot;consumes&quot;: [&quot;application/json&quot;],
+				&quot;produces&quot;: [&quot;application/json&quot;],
+				&quot;parameters&quot;: [{
+					&quot;in&quot;: &quot;body&quot;,
+					&quot;name&quot;: &quot;LoadSynth Usage Download Request&quot;,
+					&quot;required&quot;: true,
+					&quot;schema&quot;: {
+						&quot;$ref&quot;: &quot;#/definitions/Request&quot;
+					}
+				}],
+				&quot;responses&quot;: {
+					&quot;200&quot;: {
+						&quot;description&quot;: &quot;Success&quot;,
+						&quot;schema&quot;: {
+							&quot;$ref&quot;: &quot;#/definitions/Response&quot;
+						}
+					},
+					&quot;400&quot;: {
+						&quot;$ref&quot;: &quot;#/responses/400&quot;
+					},
+					&quot;401&quot;: {
+						&quot;$ref&quot;: &quot;#/responses/401&quot;
+					},
+					&quot;404&quot;: {
+						&quot;$ref&quot;: &quot;#/responses/404&quot;
+					},
+					&quot;413&quot;: {
+						&quot;$ref&quot;: &quot;#/responses/413&quot;
+					},
+					&quot;500&quot;: {
+						&quot;$ref&quot;: &quot;#/responses/500&quot;
+					},
+					&quot;503&quot;: {
+						&quot;$ref&quot;: &quot;#/responses/503&quot;
+					},
+					&quot;522&quot;: {
+						&quot;$ref&quot;: &quot;#/responses/522&quot;
+					},
+					&quot;default&quot;: {
+						&quot;$ref&quot;: &quot;#/responses/default&quot;
+					}
+				}
+			}
+		}
+	},
+	&quot;definitions&quot;: {
+		&quot;Request&quot;: {
+			&quot;type&quot;: &quot;object&quot;,
+			&quot;properties&quot;: {
+				&quot;includeIDR&quot;: {
+					&quot;type&quot;: &quot;string&quot;
+				},
+				&quot;loadSynthID&quot;: {
+					&quot;type&quot;: &quot;string&quot;
+				},
+				&quot;requestedUseremail&quot;: {
+					&quot;type&quot;: &quot;string&quot;
+				}
+			}
+		},
+		&quot;Response&quot;: {
+			&quot;type&quot;: &quot;object&quot;,
+			&quot;properties&quot;: {
+				&quot;error&quot;: {
+					&quot;type&quot;: &quot;string&quot;
+				},
+				&quot;errorMessage&quot;: {
+					&quot;type&quot;: &quot;string&quot;
+				},
+				&quot;success&quot;: {
+					&quot;type&quot;: &quot;string&quot;
+				}
+			}
+		}
+	},
+	&quot;responses&quot;: {
+		&quot;400&quot;: {
+			&quot;description&quot;: &quot;Bad Request - There are miscellaneous errors with the request, for example, mismatches between the request and what is allowed for the operation.&quot;
+		},
+		&quot;401&quot;: {
+			&quot;description&quot;: &quot;Unauthorized or 403 Forbidden - Authentication errors.&quot;
+		},
+		&quot;404&quot;: {
+			&quot;description&quot;: &quot;Not Found - Invalid URL path.&quot;
+		},
+		&quot;413&quot;: {
+			&quot;description&quot;: &quot;Request Entity Too Large - The request data was too large. This is based on the SOA Input Size quota.&quot;
+		},
+		&quot;500&quot;: {
+			&quot;description&quot;: &quot;Internal Server Error - This generic error message appears when an unexpected condition was encountered and a more specific message is not suitable.&quot;
+		},
+		&quot;503&quot;: {
+			&quot;description&quot;: &quot;Service Unavailable - The caller has hit a throttle or the request was rejected because the Atom is starting or stopping.&quot;
+		},
+		&quot;522&quot;: {
+			&quot;description&quot;: &quot;Connection Timed Out - This message is returned to the client when the SOA Worker Maximum Execution Time has been exceeded.&quot;
+		},
+		&quot;default&quot;: {
+			&quot;description&quot;: &quot;Unidentified Exception&quot;
+		}
+	},
+	&quot;security&quot;: [{}]
+}</schema>
+    <schemaType>OpenApi</schemaType>
+    <serviceBinding>{&quot;compatibleMediaTypes&quot;:{}}</serviceBinding>
+    <status>Complete</status>
+</ExternalServiceRegistration>

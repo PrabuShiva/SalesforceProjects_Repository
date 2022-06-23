@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Industry Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AGRICULTURE</fullName>
+                <default>false</default>
+                <label>AGRICULTURE</label>
+            </value>
+            <value>
+                <fullName>AIRLINES</fullName>
+                <default>false</default>
+                <label>AIRLINES</label>
+            </value>
+            <value>
+                <fullName>CHURCHES</fullName>
+                <default>false</default>
+                <label>CHURCHES</label>
+            </value>
+            <value>
+                <fullName>CONSTRUCTION</fullName>
+                <default>false</default>
+                <label>CONSTRUCTION</label>
+            </value>
+            <value>
+                <fullName>ENERGY, OIL &amp; GAS</fullName>
+                <default>false</default>
+                <label>ENERGY, OIL &amp; GAS</label>
+            </value>
+            <value>
+                <fullName>ENTERTAINMENT/RESTAURANTS</fullName>
+                <default>false</default>
+                <label>ENTERTAINMENT/RESTAURANTS</label>
+            </value>
+            <value>
+                <fullName>FINANCIAL SERVICES</fullName>
+                <default>false</default>
+                <label>FINANCIAL SERVICES</label>
+            </value>
+            <value>
+                <fullName>GOVERNMENT</fullName>
+                <default>false</default>
+                <label>GOVERNMENT</label>
+            </value>
+            <value>
+                <fullName>HOSPITALITY</fullName>
+                <default>false</default>
+                <label>HOSPITALITY</label>
+            </value>
+            <value>
+                <fullName>HOSPITALS AND HEALTHCARE</fullName>
+                <default>false</default>
+                <label>HOSPITALS AND HEALTHCARE</label>
+            </value>
+            <value>
+                <fullName>INDUSTRIALS/MANUFACTURING</fullName>
+                <default>false</default>
+                <label>INDUSTRIALS/MANUFACTURING</label>
+            </value>
+            <value>
+                <fullName>REAL ESTATE / PROPERTY MANAGEMENT</fullName>
+                <default>false</default>
+                <label>REAL ESTATE / PROPERTY MANAGEMENT</label>
+            </value>
+            <value>
+                <fullName>RETAIL</fullName>
+                <default>false</default>
+                <label>RETAIL</label>
+            </value>
+            <value>
+                <fullName>SCHOOLS (ISD, COLLEGES)</fullName>
+                <default>false</default>
+                <label>SCHOOLS (ISD, COLLEGES)</label>
+            </value>
+            <value>
+                <fullName>SERVICE INDUSTRIES</fullName>
+                <default>false</default>
+                <label>SERVICE INDUSTRIES</label>
+            </value>
+            <value>
+                <fullName>TECHNOLOGY</fullName>
+                <default>false</default>
+                <label>TECHNOLOGY</label>
+            </value>
+            <value>
+                <fullName>TRANS., COMM., AND UTIL.</fullName>
+                <default>false</default>
+                <label>TRANS., COMM., AND UTIL.</label>
+            </value>
+            <value>
+                <fullName>WHOLESALE/DISTRIBUTION</fullName>
+                <default>false</default>
+                <label>WHOLESALE/DISTRIBUTION</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
